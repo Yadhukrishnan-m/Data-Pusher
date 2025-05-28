@@ -1,4 +1,3 @@
-
 # Data Pusher - Express Web Application
 
 ## Overview
@@ -9,7 +8,7 @@ Data Pusher is a Node.js Express application designed to receive JSON data for a
 
 ## Features
 
-- **Account Management (CRED):**  
+- **Account Management (CRUD):**  
   Create, Read, Update, and Delete accounts. Each account has:
   - Unique email (mandatory)
   - Unique account ID
@@ -17,7 +16,7 @@ Data Pusher is a Node.js Express application designed to receive JSON data for a
   - Auto-generated app secret token
   - Optional website
 
-- **Destination Management (CRED):**  
+- **Destination Management (CRUD):**  
   Each account can have multiple destinations. Each destination includes:
   - URL (mandatory)
   - HTTP method (mandatory; GET, POST, PUT)
@@ -30,27 +29,58 @@ Data Pusher is a Node.js Express application designed to receive JSON data for a
 
 ## Setup Instructions
 
+### Development Setup
+
 1. Clone the repository:
-   ```
+   ```bash
    git clone <repository-url>
    ```
+
 2. Navigate into the project directory:
-   ```
+   ```bash
    cd data-pusher
    ```
+
 3. Install dependencies:
-   ```
+   ```bash
    npm install
    ```
+
 4. Create a `.env` file in the root folder and add:
-   ```
+   ```env
    PORT=5000
    ```
-5. Start the server:
+
+5. Start the development server:
+   ```bash
+   npm run dev
    ```
+
+### Production Setup
+
+1. Follow steps 1-4 from Development Setup
+
+2. Build the application:
+   ```bash
+   npm run build
+   ```
+
+3. Start the production server:
+   ```bash
    npm start
    ```
-6. The server will start on `http://localhost:5000` (or the port you specify).
+
+The server will start on `http://localhost:5000` (or the port you specify in the `.env` file).
+
+---
+
+## Available Scripts
+
+| Command | Description |
+| ------- | ----------- |
+| `npm run dev` | Start the server in development mode with hot reload |
+| `npm run build` | Build the application for production |
+| `npm start` | Start the server in production mode |
 
 ---
 
@@ -92,7 +122,7 @@ Data Pusher is a Node.js Express application designed to receive JSON data for a
 
 | Method | Endpoint                | Description                                     |
 | ------ | ----------------------- | -----------------------------------------------|
-| POST   | `/server/incoming_data` | Receive JSON data with `CL-X-TOKEN` header; forwards to the account’s destinations |
+| POST   | `/server/incoming_data` | Receive JSON data with `CL-X-TOKEN` header; forwards to the account's destinations |
 
 #### Request Headers:
 
@@ -151,5 +181,5 @@ Data Pusher is a Node.js Express application designed to receive JSON data for a
 - Morgan for logging
 - dotenv for environment variables
 
----
+
 
