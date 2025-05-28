@@ -3,7 +3,6 @@ import { DataHandlerController } from "../controllers/DataHandlerController";
 import { DataHandlerService } from "../services/DataHandlerService";
 import { AccountRepository } from "../repositories/AccountRepository";
 import { DestinationRepository } from "../repositories/DestinationRepository";
-
 const accountRepo = new AccountRepository();
 const destinationRepo = new DestinationRepository();
 const service = new DataHandlerService(accountRepo, destinationRepo);
