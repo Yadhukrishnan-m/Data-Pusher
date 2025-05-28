@@ -64,7 +64,6 @@ export class DestinationService implements IDestinationService {
 
   async getAllByAccount(accountId: string): Promise<IDestination[]> {
     const destinations:IDestination[] | null= await this._repository.findAllByAccount(accountId);
-
     if (!destinations) {
         throw new CustomError(MESSAGES.DESTINATION_NOT_FOUND,STATUS_CODES.NOT_FOUND)
     }
