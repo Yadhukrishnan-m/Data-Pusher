@@ -1,0 +1,22 @@
+export const MESSAGES = {
+  VALIDATION_FAILED: "Validation failed",
+  ACCOUNT_CREATED: "Account created successfully",
+  ACCOUNT_FETCHED: "Account fetched successfully",
+  ACCOUNT_UPDATED: "Account updated successfully",
+  ACCOUNT_NOT_FOUND: "Account not found",
+  ACCOUNTS_FETCHED: "Accounts fetched successfully",
+  DESTINATION_CREATED: "Destination created successfully",
+  DESTINATION_FETCHED: "Destination fetched successfully",
+  DESTINATION_UPDATED: "Destination updated successfully",
+  DESTINATION_DELETED: "Destination deleted successfully",
+  DESTINATION_NOT_FOUND: "Destination not found",
+  DESTINATIONS_FETCHED: "Destinations fetched successfully",
+  DESTINATION_ALREADY_EXISTS: "Destination alredy exist for this account",
+  EMAIL_ALREADY_EXISTS: "Email alredy exist",
+  NOT_FOUND: "Resource not found",
+  ACCOUNT_DELETED: "Account deleted Successfully",
+  NO_DESTINATIONS: "No destinations are created for this account",
+  UNAUTHORIZED: "Un Authenticate",
+  INVALID_DATA: "Invalid Data",
+  DATA_SENT:"Data sent to destination"
+};
