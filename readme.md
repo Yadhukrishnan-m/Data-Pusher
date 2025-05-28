@@ -27,6 +27,57 @@ Data Pusher is a Node.js Express application designed to receive JSON data for a
 
 ---
 
+## Repository Architecture
+
+```
+DATA-PUSHER/
+├── src/
+│   ├── config/
+│   │   └── database.js           # Database configuration and connection
+│   ├── controllers/
+│   │   ├── AccountRoutes.js      # Account CRUD operations controller
+│   │   ├── DataHandlerRoutes.js  # Incoming data processing controller
+│   │   └── DestinationRoutes.js  # Destination CRUD operations controller
+│   ├── interfaces/
+│   │   └── [interface files]     # API interface definitions
+│   ├── middlewares/
+│   │   └── [middleware files]    # Custom middleware functions
+│   ├── models/
+│   │   └── [model files]         # Sequelize database models
+│   ├── repositories/
+│   │   └── [repository files]    # Data access layer
+│   ├── routes/
+│   │   ├── AccountRoutes.js      # Account API routes
+│   │   ├── DataHandlerRoutes.js  # Data handler API routes
+│   │   └── DestinationRoutes.js  # Destination API routes
+│   ├── services/
+│   │   └── [service files]       # Business logic layer
+│   ├── utils/
+│   │   ├── CustomError.js        # Custom error handling
+│   │   └── GenerateSecretToken.js # Token generation utility
+│   └── validators/
+│       └── app.js                # Input validation logic
+├── node_modules/                 # Dependencies (ignored in Git)
+├── .env                         # Environment variables (ignored in Git)
+├── .gitignore                   # Git ignore rules
+├── app.js                       # Main application entry point
+├── data.sqlite                  # SQLite database (ignored in Git)
+├── package.json                 # Project dependencies and scripts
+├── package-lock.json            # Lock file for dependencies
+├── README.md                    # Project documentation
+└── tsconfig.json                # TypeScript configuration
+```
+
+### Architecture Highlights
+
+- **Layered Architecture:** Clean separation of concerns with controllers, services, repositories, and models
+- **Modular Design:** Organized by feature domains (accounts, destinations, data handling)
+- **Security First:** Environment variables and database files are excluded from version control
+- **Scalable Structure:** Easy to extend with new features and maintain existing code
+- **Express.js Framework:** RESTful API design with proper routing and middleware
+
+---
+
 ## Setup Instructions
 
 ### Development Setup
@@ -181,5 +232,10 @@ The server will start on `http://localhost:5000` (or the port you specify in the
 - Morgan for logging
 - dotenv for environment variables
 
+---
 
+## Database
 
+The application uses SQLite database stored in `data.sqlite`. This file is automatically created when you first run the application and contains all accounts and destinations data.
+
+**Note:** The database file is not tracked in Git for security reasons. Make sure to backup your database file separately in production environments.
